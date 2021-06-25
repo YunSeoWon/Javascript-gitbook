@@ -1,83 +1,135 @@
-# 연산자
+---
+description: 제어구문
+---
 
-모든 언어에서 사용되는 연산자 말고 나머지 연산만 정리하였다.
+# 제어구문
 
-### 분할대입 \[ES2015\]
+## 제어구문
 
-분할 대입은 배열이나 객체를 분해해서 여러 변수에 한방에 대입하는 것을 말한다.
+### if - else if - else
 
-```javascript
-let [x1, x2, x3] = [1, 2, 3];
-
-console.log(x1) // 1
-```
-
-객체의 경우 배열과 다르게 이름으로 프로퍼티를 개별 변수로 분해한다.
+어느 문법이나 거의 국룰..
 
 ```javascript
-let person = { name: 'beer1', age: 27, gender: 'male' };
-let { age, name, money } = person
-
-console.log(name); // 'beer1'
-console.log(money); // undefined
+if (condition) {
+    code
+} else if (condition2) {
+    code
+} 
+ ... 
+} else {
+    code
+}
 ```
 
-### 등가 연산자\(==\)와 동치 연산자\(===\)
-
-== 연산자는 피연산자의 값이 같은지 여부를 나타낸다. 데이터형을 의식하지 않고 코딩이 가능 \(데이터형을 어느 한쪽에 맞춘 후 값 일치 여부 판단\)
+블록안에 명령어가 한 줄이면 중괄호를 생략할 수 있다. \(비추\)
 
 ```javascript
-console.log('3.14E2' == 314); // true
-console.log('0x10' == 16); // true
-console.log('1' == 1); // true
+var x = 1
+if (x > 10)
+    console.log('x is grater than 10')
+else
+    console.log('x is less than or equal 10')
 ```
 
-=== 연산자는 피연산자의 데이터형이 일치하지 않으면 false를 반환한다.
+### switch
+
+이것도 다른 언어와 비
 
 ```javascript
-console.log('3.14E2' === 314); // false
-console.log('0x10' === 16); // false
-console.log('1' === 1); // false
+var beer = 'guinness'
+
+switch (beer) {
+  case 'guinness':
+  console.log('made in Ireland');
+  break;
+  case 'heineken':
+  console.log('made in Netherlands');
+  break;
+  case 'kozel':
+  console.log('made in Czech');
+  break;
+  case 'terra':
+  console.log('made in Korea');
+  break;
+  default:
+  console.log("I don't know");
+}
+
+ // made in Ireland
 ```
 
-### delete 연산자
+* 걸린 case에서 break를 만날 때 까지 switch 명령어가 작동한다.
+* switch 식과 case 값은 === 연산자로 비교한다.
 
-delete 연산자는 피연산자에 지정한 변수나 배열요소, 객체의 프로퍼티를 삭제하는 연산자이다. 삭제에 성공하면 true, 실패하면 false를 반환한다.
+### while, do ... while
+
+이것도 다른 언어와 비슷
 
 ```javascript
-let array = ['heineken', 'kozel', 'guinness']
-console.log(array) // ["heineken", "kozel", "guinness"]
-console.log(delete array[0]) // true
-console.log(array) // [undefined, "kozel", "guinness"]
+while(condition) {
+    loop
+}
 
-let p = { name: 'beer1', age: 27, gender: 'male' };
-console.log(p); // { name: 'beer1', age: 27, gender: 'male' }
-console.log(delete p.name); // true
-console.log(p); // { age: 27, gender: 'male' };
-console.log(delete p.name2); // true
+do {
+    loop
+} while(condition);
 ```
 
-* 객체에 없는 필드를 지워도 true가 반환된다.
+### for
 
-### typeof 연산자
-
-typeof 연산자는 피연산자의 데이터형을 나타내는 문자열을 반환한다.
+이것도 다른 언어와 비슷
 
 ```javascript
-var num = 1;
-var str = 'beer1';
-var flag = true;
-var ary = ['heineken', 'kozel', 'guinness'];
-var obj = { name: 'beer1', age: 27, gender: 'male' };
-
-console.log(typeof num); // number
-console.log(typeof str); // string
-console.log(typeof flag); // boolean
-console.log(typeof ary); // object
-console.log(typeof obj); // object
+for(var i = 0; i < 10; i++) {
+    console.log(i);
+}
 ```
 
-* 배열과 객체 모두 object이다.
+### for ... in
 
- 
+for ... in은 배열은 인덱스, 객체는 프로퍼티 명이 key로 들어간다.
+
+```javascript
+var ary = [1, 2, 3];
+
+for (var key in ary) {
+    console.log(ary[key]);
+}
+```
+
+```javascript
+var data = { kakao: 169500, naver: 423500, ncsoft: 825000 };
+for (var key in data) {
+    console.log(key + "=" + data[key]);
+}
+```
+
+### for ... of
+
+for ... in은 key\(index\)를 순회하지만 for ... of는 값을 순회한다. \(객체는 불가능 not iterable이라서\)
+
+```javascript
+var ary = [1, 2, 3]
+
+for (var element of ary) {
+    console.log(element)
+}
+```
+
+### break, continue도 있다.
+
+### 예외처리는 try - catch - finally
+
+```javascript
+try {
+    code
+} catch (e) {
+    code
+} finally {
+    code    
+}
+```
+
+* 예외 처리는 오버헤드가 커서 루프내에서는 피해야 한다.
 
