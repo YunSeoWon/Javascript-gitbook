@@ -34,7 +34,7 @@ else
 
 ### switch
 
-이것도 다른 언어와 비
+이것도 다른 언어와 비슷
 
 ```javascript
 var beer = 'guinness'

@@ -9,4 +9,6 @@
 * [연산자](undefined/undefined-1.md)
 * [제어구문](undefined/undefined-2.md)
 * [객체](undefined/undefined-3.md)
+* [함수](undefined/undefined-4.md)
+* [스코프](undefined/undefined-5.md)
 
