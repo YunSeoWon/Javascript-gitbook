@@ -3,12 +3,12 @@
 * [Javascript-gitbook](README.md)
 * [Untitled](untitled.md)
 
-## 기본문법
+## 기본문법 <a id="basic-grammers"></a>
 
-* [변수와 상수, 자료형](undefined/undefined.md)
-* [연산자](undefined/undefined-1.md)
-* [제어구문](undefined/undefined-2.md)
-* [객체](undefined/undefined-3.md)
-* [함수](undefined/undefined-4.md)
-* [스코프](undefined/undefined-5.md)
+* [변수와 상수, 자료형](basic-grammers/variable-constant-type.md)
+* [연산자](basic-grammers/oprations.md)
+* [제어구문](basic-grammers/control-statements.md)
+* [객체](basic-grammers/object.md)
+* [함수](basic-grammers/function.md)
+* [스코프](basic-grammers/scope.md)
 
